@@ -7,8 +7,6 @@ react-native-chart is a simple module for adding line charts, area charts, or ba
 
 **NOTE!** The current major version (1.X.Y) is still being developed. If you are looking for the most recent iOS-only version, please download `^0.1.4`.
 
-**NOTE 2** Starting next week (time of writing Oct. 13 2016) I will be able to resume development on this project. I had to make some clarifications with regard to an IP agreement.
-
 ![Screenshot](https://raw.githubusercontent.com/tomauty/react-native-chart/master/screenshots/README.png)
 
 ## Getting Started
@@ -56,12 +54,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-const data = [[
+const data = [
 	[0, 1],
 	[1, 3],
 	[3, 7],
 	[4, 9],
-]];
+];
 
 class SimpleChart extends Component {
 	render() {
@@ -72,8 +70,6 @@ class SimpleChart extends Component {
 					data={data}
 					verticalGridStep={5}
 					type="line"
-					showDataPoint={true}
-					color={['#e1cd00']}
 				 />
 			</View>
 		);
@@ -83,17 +79,15 @@ class SimpleChart extends Component {
 ```
 ## Properties
 
-Use '' y-values to signify the 'render but empty' data points.
-
 | Property                | Type                      | Description                                               | Required | Default               |
 | ----------------------- | ------------------------- | --------------------------------------------------------- | -------- | --------------------- |
-| data                    | Array<  Array< [number, number] > > | An array of arrays of [x, y] pairs.                                 | **Yes**  |                       |
+| data                    | Array< [number, number] > | An array of [x, y] pairs.                                 | **Yes**  |                       |
 | type                    | string                    | pie/bar/line                                              | **Yes**  | bar                   |
-| color                   | Array < string >          | Color of bars/line in line chart                          | No       | #4DC4E6               |
+| color                   | string                    | Color of bars/line in line chart                          | No       | #4DC4E6               |
 | cornerRadius            | number                    | Corner radius of bars in bar chart                        | No       | 0                     |
-| fillColor               | Array < string >          | Fill area colors in line chart                            | No       |                       |
-| dataPointColor          | Array < string >          | Stroke colors for line chart data point                   | No       |                       |
-| dataPointFillColor      | Array < string >          | Fill colors for line chart data point                     | No       |                       |
+| fillColor               | string                    | Fill area color in line chart                             | No       |                       |
+| dataPointColor          | string                    | Stroke color for line chart data point                    | No       |                       |
+| dataPointFillColor      | string                    | Fill color for line chart data point                      | No       |                       |
 | dataPointRadius         | number                    | Radius of the data point                                  | No       | 3                     |
 | lineWidth               | number                    | Width of line chart line                                  | No       | 1                     |
 | showDataPoint           | boolean                   | Show data points on line chart                            | No       | false                 |
@@ -112,17 +106,14 @@ Use '' y-values to signify the 'render but empty' data points.
 | style                   | object                    | Style on the container                                    | No       | {}                    |
 | tightBounds             | boolean                   | Tighten min and max bounds strictly to min/max in dataset | No       | false                 |
 | verticalGridStep        | number                    | How many vertical grid lines to show                      | No       | 4                     |
-| horizontalGridStep      | number                    | How many horizontal grid lines to show                    | No       | all                      |
 | xAxisHeight             | number                    | Height of X-axis container                                | No       | 20                    |
 | yAxisTransform          | Function                  | Transform data point to y-axis label                      | No       | (_) => _              |
 | xAxisTransform          | Function                  | Transform data point to x-axis label                      | No       | (_) => _              |
 | yAxisWidth              | number                    | Width of the Y-axis container                             | No       | 30                    |
-| yAxisUseDecimal         | boolean                   | Show decimals on Y-axis labels                            | No       | false                 |
-| yAxisShortLabel         | boolean                   | Shorten yAxis labels with K, M, B for thousand<->billion, etc  | No       | false                 |
 
 ## TODO
 - [ ] Code cleanup
-- [X] Multi-line chart
+- [ ] Multi-line chart
 - [ ] Horizontal line chart
 - [ ] Scatter chart
 

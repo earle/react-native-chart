@@ -58,12 +58,7 @@ export default class Chart extends Component<void, any, any> {
 	constructor(props : any) {
 		super(props);
 		this.state = { bounds: { min: 0, max: 0 } };
-
-        if (props.debug) {
-            console.log('Chart: ', props);
-        }
 	}
-
 	componentDidMount() {
 		this._computeBounds();
 	}
