@@ -52,6 +52,7 @@ export default class BarChart extends Component<void, any, any> {
 		let height = HEIGHT - ((minBound * scale) + (HEIGHT - (dataPoint * scale)));
 
 		if (height <= 0) height = 20;
+        if (height > HEIGHT) height = HEIGHT;
 
 		return (
 			<TouchableWithoutFeedback
