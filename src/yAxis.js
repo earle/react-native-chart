@@ -24,7 +24,7 @@ export default class YAxis extends Component<void, any, any> {
 		placement: PropTypes.oneOf(['left', 'right']),
 		verticalGridStep: PropTypes.number.isRequired,
 		yAxisTransform: PropTypes.func,
-        yAxisUseDecimal: PropTypes.boolean,
+        yAxisUseDecimal: PropTypes.bool,
 	};
 
 	static defaultProps : any = {
