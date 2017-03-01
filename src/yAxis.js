@@ -24,6 +24,7 @@ export default class YAxis extends Component<void, any, any> {
 		placement: PropTypes.oneOf(['left', 'right']),
 		verticalGridStep: PropTypes.number.isRequired,
 		yAxisTransform: PropTypes.func,
+        yAxisUseDecimal: PropTypes.boolean,
 	};
 
 	static defaultProps : any = {
@@ -46,10 +47,17 @@ export default class YAxis extends Component<void, any, any> {
 		}
 		minBound = (minBound < 0) ? 0 : minBound;
 		let label = minBound + (maxBound - minBound) / this.props.verticalGridStep * index;
-		label = Math.round(label);
+
+        if (this.props.yAxisUseDecimal) {
+		    label = Math.round(label * 10) / 10;
+        } else {
+		    label = Math.round(label);
+        }
+
 		if (this.props.yAxisTransform && typeof this.props.yAxisTransform === 'function') {
 			label = this.props.yAxisTransform(label);
 		}
+
 		return (
 			<Text
 				style={{
