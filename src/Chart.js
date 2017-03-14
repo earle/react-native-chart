@@ -88,6 +88,10 @@ export default class Chart extends Component<void, any, any> {
 		min = Math.round(min);
 		max = Math.round(max);
 
+        if (max < this.props.minVerticalValue) {
+            max = this.props.minVerticalValue;
+        }
+
 		// Exit if we want tight bounds
 		if (this.props.tightBounds) {
 			return this.setState({ bounds: { min, max } });
